@@ -23,7 +23,8 @@ public class Add extends Bot implements Master {
             t += " ";
             int length = t.length();
             for (int i = 0; i < length; i++) {
-                if ((t.charAt(c) + "").isBlank()) {
+                String str = t.charAt(c) + "";
+                if (str.isBlank()) {
                     System.out.println(t2);
                     list.add(Integer.parseInt(t2.trim()));
                     res += Integer.parseInt(t2.trim());
