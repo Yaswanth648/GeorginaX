@@ -2,7 +2,7 @@ package com.example;
 
 import com.example.Helpers.configutation;
 import com.example.Plugins.Add;
-import com.example.Plugins.instagram;
+import com.example.Plugins.userProfilePic;
 import com.example.Plugins.Greetings.welcome;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
@@ -22,7 +22,7 @@ public class Bot extends TelegramLongPollingBot {
 
     public void sendRequest(Update update, String cmd) {
         new welcome().handleRequests(update, cmd);
-        new instagram().handleRequests(update, cmd);
+        new userProfilePic().handleRequests(update, cmd);
         new Add().handleRequests(update, cmd);
     }
 
