@@ -1,6 +1,7 @@
 package com.example;
 
 import com.example.Helpers.configutation;
+import com.example.Plugins.instagram;
 import com.example.Plugins.Greetings.welcome;
 
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
@@ -21,6 +22,7 @@ public class Bot extends TelegramLongPollingBot{
 
     public void sendRequest(Update update, String cmd){
         new welcome().handleRequests(update, cmd);
+        new instagram().handleRequests(update, cmd);
     }
 
     public String getHandler(){
