@@ -9,6 +9,11 @@
             "value": "",
             "required": true
         },
+        "botUsername": {
+            "description": "Bot Username, from @BotFather.",
+            "value": "",
+            "required": true
+        },
         "handler": {
             "description": "The command handler to invoke commands.",
             "value": "/",
