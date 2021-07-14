@@ -10,7 +10,7 @@
             "value": "",
             "required": true
         },
-        "botUsername": {
+        "BotUserName": {
             "description": "Bot Username, from @BotFather.",
             "value": "",
             "required": true
