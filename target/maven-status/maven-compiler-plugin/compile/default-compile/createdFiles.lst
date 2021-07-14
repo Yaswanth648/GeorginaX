@@ -1,0 +1,9 @@
+com\example\Bot.class
+com\example\Helpers\Insta.class
+com\example\Helpers\outgoingArguments.class
+com\example\App.class
+com\example\Helpers\configutation.class
+com\example\Helpers\sendPic.class
+com\example\Plugins\instagram.class
+com\example\Plugins\Greetings\welcome.class
+com\example\Master.class
