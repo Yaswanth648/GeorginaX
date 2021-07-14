@@ -11,7 +11,7 @@ public class welcome extends Bot implements Master{
     @Override
     public void handleRequests(Update update, String cmd) {
         if(cmd.equalsIgnoreCase(getHandler()+"start")){
-            new sendPic().sendpic(update, "Welcome to Georgina Bot");
+            new sendPic().sendpic(update, "src/main/java/com/example/assets/res/georgina.png", "Welcome to Georgina Bot");
             sendMessage(update, "Welcome to Georgina Bot");
         }
         
