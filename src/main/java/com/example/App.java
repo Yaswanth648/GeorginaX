@@ -9,6 +9,7 @@ public final class App {
         try {
             TelegramBotsApi telegramBotsApi = new TelegramBotsApi(DefaultBotSession.class);
             telegramBotsApi.registerBot(new Bot());
+            System.out.println("Bot Started Successfully");
         } catch (TelegramApiException e) {
             e.printStackTrace();
         }
