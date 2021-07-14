@@ -11,8 +11,8 @@ import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 
 public class sendPic extends Bot {
 
-    public void sendpic(Update update, String caption){
-        InputFile inputFile = new InputFile(new File("src/main/java/com/example/assets/res/georgina.png"));
+    public void sendpic(Update update, String fileLoc, String caption){
+        InputFile inputFile = new InputFile(new File(fileLoc));
         SendPhoto photo = new SendPhoto(chatId(update), inputFile);
         photo.setCaption(caption);
 
