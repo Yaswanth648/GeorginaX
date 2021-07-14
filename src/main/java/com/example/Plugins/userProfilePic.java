@@ -6,8 +6,6 @@ import com.example.Bot;
 import com.example.Master;
 import com.example.Helpers.sendAction;
 import com.example.Plugins.Authentication.Authentication;
-
-import org.telegram.telegrambots.meta.api.methods.ActionType;
 import org.telegram.telegrambots.meta.api.objects.Update;
 
 public class userProfilePic extends Bot implements Master {
