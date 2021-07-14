@@ -1,6 +1,7 @@
 #
 # Standard Maven .gitignore
 #
+.env
 target/
 pom.xml.tag
 pom.xml.releaseBackup
