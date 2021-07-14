@@ -3,6 +3,7 @@
     "description": "Test Bot",
     "repository": "https://github.com/Hellboy-Aaryan/Georgina",
     "success_url": "https://t.me/Hellion_Coder",
+    "stack": "container",
     "env": {
         "botToken": {
             "description": "Token of your bot, from @BotFather.",
