@@ -11,31 +11,31 @@ import org.telegram.telegrambots.meta.api.objects.Message;
 import org.telegram.telegrambots.meta.api.objects.Update;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 
-public class Bot extends TelegramLongPollingBot{
+public class Bot extends TelegramLongPollingBot {
 
     @Override
     public void onUpdateReceived(Update update) {
         String cmd = update.getMessage().getText();
-        if(update.hasMessage() && cmd.startsWith("/")){
+        if (update.hasMessage() && cmd.startsWith("/")) {
             sendRequest(update, cmd);
         }
     }
 
-    public void sendRequest(Update update, String cmd){
+    public void sendRequest(Update update, String cmd) {
         new welcome().handleRequests(update, cmd);
         new instagram().handleRequests(update, cmd);
         new Add().handleRequests(update, cmd);
     }
 
-    public String getHandler(){
+    public String getHandler() {
         return configutation.handler;
     }
 
-    public String chatId(Update update){
+    public String chatId(Update update) {
         return update.getMessage().getChatId().toString();
     }
 
-    public Message sendMessage(Update update, String text){
+    public Message sendMessage(Update update, String text) {
         Message m;
         SendMessage sMessage = new SendMessage(chatId(update), text);
 
@@ -50,13 +50,15 @@ public class Bot extends TelegramLongPollingBot{
     }
 
     @Override
-    public String getBotUsername() {        
-        return configutation.botUserName;
+    public String getBotUsername() {
+        String s = configutation.botUserName;
+        return s;
     }
 
     @Override
     public String getBotToken() {
-        return configutation.botToken;
+        String s = configutation.botToken;
+        return s;
     }
-    
+
 }

@@ -26,3 +26,13 @@ buildNumber.properties
 .factorypath
 .project
 .vscode/
+
+# compiled class files
+.env
+*.class
+.idea/
+.settings
+.project
+.classpath
+.apt*
+target/
