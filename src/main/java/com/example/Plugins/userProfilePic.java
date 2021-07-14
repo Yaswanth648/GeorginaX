@@ -17,7 +17,7 @@ public class userProfilePic extends Bot implements Master {
         if (cmd.equalsIgnoreCase(getHandler() + "insta " + cmd.replace(getHandler() + "insta ", ""))) {
             String username = cmd.replace(getHandler() + "insta ", "");
             sendAction s = new sendAction();
-            s.sendChatAction(update.getMessage().getChatId().toString(), ActionType.UPLOADDOCUMENT);
+            //s.sendChatAction(update.getMessage().getChatId().toString(), ActionType.UPLOADDOCUMENT);
             Authentication a = new Authentication();
             try {
                 a.getUserProfilePic(username, update);
