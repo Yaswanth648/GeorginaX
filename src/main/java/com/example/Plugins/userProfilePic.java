@@ -1,7 +1,6 @@
 package com.example.Plugins;
 
 import java.io.IOException;
-
 import com.example.Bot;
 import com.example.Master;
 import com.example.Helpers.sendAction;
