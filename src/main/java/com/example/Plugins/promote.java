@@ -26,7 +26,7 @@ public class promote extends Bot implements Master {
                     boolean ifadmin = promoteChatMember.getCanPromoteMembers();
 
                     if (ifadmin)
-                        sendMessage(update, user.getFirstName() + " is already Administrator in this Chat.");
+                        sendMessage(update, user.getFirstName() + " is already an Administrator in this Chat.");
 
                     // Permissions Granted to the User
 
