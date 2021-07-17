@@ -18,11 +18,10 @@ public class promote extends Bot implements Master {
             if (update.getMessage().isReply() && cmd.equalsIgnoreCase(getHandler() + "promote")) {
                 Message replymsg = update.getMessage().getReplyToMessage();
                 User user = replymsg.getFrom();
-                update.getMessage().getFrom();
                 long userId = user.getId();
 
                 try {
-                    PromoteChatMember promoteChatMember = new PromoteChatMember(chatId(update), userId, false, true, true, true, true, true, true, false, false, true, true);
+                    PromoteChatMember promoteChatMember = new PromoteChatMember(update.getMessage().getChatId().toString(), userId, false, true, true, true, true, true, true, false, false, true, true);
                     execute(promoteChatMember);
                     sendMessage(update, user.getFirstName() + " is Promoted Successfully");
                 } catch (Exception e) {
