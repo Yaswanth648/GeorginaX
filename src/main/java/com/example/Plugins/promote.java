@@ -23,21 +23,31 @@ public class promote extends Bot implements Master {
 
                 try {
                     PromoteChatMember promoteChatMember = new PromoteChatMember(chatId(update), userId);
+                    boolean ifadmin = promoteChatMember.getCanPromoteMembers();
+
+                    if (ifadmin)
+                        sendMessage(update, user.getFirstName() + " is already Administrator in this Chat.");
 
                     // Permissions Granted to the User
-                    //promoteChatMember.setCanChangeInformation(true);
-                    promoteChatMember.setCanDeleteMessages(true);
-                    promoteChatMember.setCanEditMessages(true);
-                    promoteChatMember.setCanInviteUsers(true);
-                    //promoteChatMember.setCanManageChat(true);
-                    promoteChatMember.setCanManageVoiceChats(true);
-                    promoteChatMember.setCanPinMessages(true);
-                    promoteChatMember.setCanPostMessages(true);
-                    //promoteChatMember.setCanRestrictMembers(true);
 
-                    boolean res = execute(promoteChatMember);
-                    if(res) sendMessage(update, user.getFirstName() + " is Promoted Successfully");
-                    else sendMessage(update, "Error Promoting user");
+                    else {
+                        // promoteChatMember.setCanChangeInformation(true);
+                        promoteChatMember.setCanDeleteMessages(true);
+                        promoteChatMember.setCanEditMessages(true);
+                        promoteChatMember.setCanInviteUsers(true);
+                        // promoteChatMember.setCanManageChat(true);
+                        // promoteChatMember.setCanManageVoiceChats(true);
+                        promoteChatMember.setCanPinMessages(true);
+                        promoteChatMember.setCanPostMessages(true);
+                        // promoteChatMember.setCanRestrictMembers(true);
+
+                        boolean res = execute(promoteChatMember);
+                        if (res)
+                            sendMessage(update, user.getFirstName() + " is Promoted Successfully");
+                        else
+                            sendMessage(update, "Error Promoting user");
+                    }
+
                 } catch (Exception e) {
                     sendMessage(update, e.getMessage());
                 }
