@@ -10,5 +10,5 @@ public class configutation {
     public static String botToken = dotenv.get("botToken");
     public static String botUserName = dotenv.get("botUserName");
     public static String handler = dotenv.get("handler");
-    public static String rapidXapi = dotenv.get("af27998622mshee39756f420f221p167084jsn884f347da58c");
+    public static String rapidXapi = dotenv.get("rapidXapi");
 }
