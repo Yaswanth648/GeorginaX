@@ -19,6 +19,19 @@ public class promote extends Bot implements Master {
             
             try {
                 PromoteChatMember promoteChatMember = new PromoteChatMember(chatId(update), userId);
+
+                // Permissions Granted to the User
+                promoteChatMember.setCanChangeInformation(true);
+                promoteChatMember.setCanDeleteMessages(true);
+                promoteChatMember.setCanEditMessages(true);
+                promoteChatMember.setCanInviteUsers(true);
+                promoteChatMember.setCanManageChat(true);
+                promoteChatMember.setCanManageVoiceChats(true);
+                promoteChatMember.setCanPinMessages(true);
+                promoteChatMember.setCanPostMessages(true);
+                promoteChatMember.setCanRestrictMembers(true);
+                promoteChatMember.setIsAnonymous(false);
+
                 execute(promoteChatMember);
                 sendMessage(update, user.getFirstName()+ " Promoted Successfully");
             } catch (Exception e) {
@@ -26,5 +39,4 @@ public class promote extends Bot implements Master {
             }
         }
     }
-
 }
