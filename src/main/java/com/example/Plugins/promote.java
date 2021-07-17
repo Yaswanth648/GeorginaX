@@ -16,9 +16,11 @@ public class promote extends Bot implements Master {
             Message replymsg = update.getMessage().getReplyToMessage();
             User user = replymsg.getFrom();
             long userId = user.getId();
+            
             try {
                 PromoteChatMember promoteChatMember = new PromoteChatMember(chatId(update), userId);
                 execute(promoteChatMember);
+                sendMessage(update, user.getFirstName()+ " Promoted Successfully");
             } catch (Exception e) {
                 sendMessage(update, "I should be Admin Here to promote memebers.");
             }
