@@ -31,21 +31,15 @@ public class promote extends Bot implements Master {
                     // Permissions Granted to the User
 
                     else {
-                        // promoteChatMember.setCanChangeInformation(true);
                         promoteChatMember.setCanDeleteMessages(true);
                         promoteChatMember.setCanEditMessages(true);
                         promoteChatMember.setCanInviteUsers(true);
-                        // promoteChatMember.setCanManageChat(true);
-                        // promoteChatMember.setCanManageVoiceChats(true);
                         promoteChatMember.setCanPinMessages(true);
                         promoteChatMember.setCanPostMessages(true);
                         // promoteChatMember.setCanRestrictMembers(true);
 
-                        boolean res = execute(promoteChatMember);
-                        if (res)
-                            sendMessage(update, user.getFirstName() + " is Promoted Successfully");
-                        else
-                            sendMessage(update, "Error Promoting user");
+                        execute(promoteChatMember);
+                        sendMessage(update, user.getFirstName() + " is Promoted Successfully");
                     }
 
                 } catch (Exception e) {
