@@ -22,17 +22,9 @@ public class promote extends Bot implements Master {
                 long userId = user.getId();
 
                 try {
-                    PromoteChatMember promoteChatMember = new PromoteChatMember(chatId(update), userId);
-                    promoteChatMember.setCanDeleteMessages(true);
-                    promoteChatMember.setCanEditMessages(true);
-                    promoteChatMember.setCanInviteUsers(true);
-                    promoteChatMember.setCanPinMessages(true);
-                    promoteChatMember.setCanPostMessages(true);
-                    // promoteChatMember.setCanRestrictMembers(true);
-
+                    PromoteChatMember promoteChatMember = new PromoteChatMember(chatId(update), userId, false, true, true, true, true, true, true, false, false, true, true);
                     execute(promoteChatMember);
                     sendMessage(update, user.getFirstName() + " is Promoted Successfully");
-
                 } catch (Exception e) {
                     sendMessage(update, e.getMessage());
                 }
