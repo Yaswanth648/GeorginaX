@@ -1,5 +1,5 @@
 # Georgina
-  [GeroginaX](http://t.dog/GeorginaX_Bot) is a powerful **open-source** __Telegram Bot__ made with Java by [Aaryan](http://t.dog/Hellion_Coder).
+  [GeroginaX](https://t.me/GeorginaX_Bot) is a powerful **open-source** __Telegram Bot__ made with Java by [Aaryan](https://t.me/Hellion_Coder).
 
   This is a **Group Manager** Bot which will help you to Manage your Telegram Groups.
 
@@ -14,7 +14,7 @@
   [Developer](https://github.com/Hellboy-Aaryan/) - Developer(Me)
 
 # Donations
-  As said earlier, GeorginaX is a **open-source** Bot so to keep that Running we need some __Donations__. This help's to keep me motivated and get this Bot running you can read more about Donation's via the Bot [GeorginaX](http://t.dog/GeorginaX_Bot).
+  As said earlier, GeorginaX is a **open-source** Bot so to keep that Running we need some __Donations__. This help's to keep me motivated and get this Bot running you can read more about Donation's via the Bot [GeorginaX](https://t.me/GeorginaX_Bot).
 
   This is my PayPal Account you can donate through it :)
 
