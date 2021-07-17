@@ -12,30 +12,35 @@ public class promote extends Bot implements Master {
 
     @Override
     public void handleRequests(Update update, String cmd) {
-        if(update.getMessage().isReply() && cmd.equalsIgnoreCase(getHandler()+"promote")){
-            Message replymsg = update.getMessage().getReplyToMessage();
-            User user = replymsg.getFrom();
-            long userId = user.getId();
-            
-            try {
-                PromoteChatMember promoteChatMember = new PromoteChatMember(chatId(update), userId);
+        if (update.getMessage().getChat().isUserChat())
+            sendMessage(update, "This command can only be used in Group Chats.");
+        else {
+            if (update.getMessage().isReply() && cmd.equalsIgnoreCase(getHandler() + "promote")) {
+                Message replymsg = update.getMessage().getReplyToMessage();
+                User user = replymsg.getFrom();
+                update.getMessage().getFrom();
+                long userId = user.getId();
 
-                // Permissions Granted to the User
-                promoteChatMember.setCanChangeInformation(true);
-                promoteChatMember.setCanDeleteMessages(true);
-                promoteChatMember.setCanEditMessages(true);
-                promoteChatMember.setCanInviteUsers(true);
-                promoteChatMember.setCanManageChat(true);
-                promoteChatMember.setCanManageVoiceChats(true);
-                promoteChatMember.setCanPinMessages(true);
-                promoteChatMember.setCanPostMessages(true);
-                promoteChatMember.setCanRestrictMembers(true);
-                promoteChatMember.setIsAnonymous(false);
+                try {
+                    PromoteChatMember promoteChatMember = new PromoteChatMember(chatId(update), userId);
 
-                execute(promoteChatMember);
-                sendMessage(update, user.getFirstName()+ " Promoted Successfully");
-            } catch (Exception e) {
-                sendMessage(update, "I should be Admin Here to promote memebers.");
+                    // Permissions Granted to the User
+                    promoteChatMember.setCanChangeInformation(true);
+                    promoteChatMember.setCanDeleteMessages(true);
+                    promoteChatMember.setCanEditMessages(true);
+                    promoteChatMember.setCanInviteUsers(true);
+                    promoteChatMember.setCanManageChat(true);
+                    promoteChatMember.setCanManageVoiceChats(true);
+                    promoteChatMember.setCanPinMessages(true);
+                    promoteChatMember.setCanPostMessages(true);
+                    promoteChatMember.setCanRestrictMembers(true);
+                    promoteChatMember.setIsAnonymous(false);
+
+                    execute(promoteChatMember);
+                    sendMessage(update, user.getFirstName() + " Promoted Successfully");
+                } catch (Exception e) {
+                    sendMessage(update, e.getMessage());
+                }
             }
         }
     }
