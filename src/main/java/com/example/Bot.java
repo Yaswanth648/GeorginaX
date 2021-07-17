@@ -3,6 +3,7 @@ package com.example;
 import com.example.Helpers.configutation;
 import com.example.Plugins.Add;
 import com.example.Plugins.eval;
+import com.example.Plugins.promote;
 import com.example.Plugins.userProfilePic;
 import com.example.Plugins.Greetings.welcome;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
@@ -26,6 +27,7 @@ public class Bot extends TelegramLongPollingBot {
         new userProfilePic().handleRequests(update, cmd);
         new Add().handleRequests(update, cmd);
         new eval().handleRequests(update, cmd);
+        new promote().handleRequests(update, cmd);
     }
 
     public String getHandler() {
