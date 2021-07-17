@@ -21,7 +21,7 @@ public class translate extends Bot implements Master {
                         .header("accept-encoding", "application/gzip")
                         .header("x-rapidapi-key", "af27998622mshee39756f420f221p167084jsn884f347da58c")
                         .header("x-rapidapi-host", "google-translate1.p.rapidapi.com")
-                        .body("q=Hello%2C%20world!&target=es&source="+language_code).asString();
+                        .body("q=Hello%2C%20world!&target=es&source=" + language_code).asString();
 
                 sendMessage(update, response.getBody());
             } catch (UnirestException e) {
