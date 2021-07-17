@@ -12,7 +12,7 @@ public class promote extends Bot implements Master {
 
     @Override
     public void handleRequests(Update update, String cmd) {
-        if (update.getMessage().getReplyToMessage().getText().equals(getHandler() + "promote")) {
+        if(update.getMessage().isReply() && cmd.equalsIgnoreCase(getHandler()+"promote")){
             Message replymsg = update.getMessage().getReplyToMessage();
             User user = replymsg.getFrom();
             long userId = user.getId();
@@ -23,7 +23,6 @@ public class promote extends Bot implements Master {
                 sendMessage(update, "I should be Admin Here to promote memebers.");
             }
         }
-
     }
 
 }
