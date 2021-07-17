@@ -23,24 +23,15 @@ public class promote extends Bot implements Master {
 
                 try {
                     PromoteChatMember promoteChatMember = new PromoteChatMember(chatId(update), userId);
-                    boolean ifadmin = promoteChatMember.getCanPromoteMembers();
+                    promoteChatMember.setCanDeleteMessages(true);
+                    promoteChatMember.setCanEditMessages(true);
+                    promoteChatMember.setCanInviteUsers(true);
+                    promoteChatMember.setCanPinMessages(true);
+                    promoteChatMember.setCanPostMessages(true);
+                    // promoteChatMember.setCanRestrictMembers(true);
 
-                    if (ifadmin)
-                        sendMessage(update, user.getFirstName() + " is already an Administrator in this Chat.");
-
-                    // Permissions Granted to the User
-
-                    else {
-                        promoteChatMember.setCanDeleteMessages(true);
-                        promoteChatMember.setCanEditMessages(true);
-                        promoteChatMember.setCanInviteUsers(true);
-                        promoteChatMember.setCanPinMessages(true);
-                        promoteChatMember.setCanPostMessages(true);
-                        // promoteChatMember.setCanRestrictMembers(true);
-
-                        execute(promoteChatMember);
-                        sendMessage(update, user.getFirstName() + " is Promoted Successfully");
-                    }
+                    execute(promoteChatMember);
+                    sendMessage(update, user.getFirstName() + " is Promoted Successfully");
 
                 } catch (Exception e) {
                     sendMessage(update, e.getMessage());
