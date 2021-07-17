@@ -25,7 +25,7 @@ public class promote extends Bot implements Master {
                     PromoteChatMember promoteChatMember = new PromoteChatMember(chatId(update), userId);
 
                     // Permissions Granted to the User
-                    promoteChatMember.setCanChangeInformation(true);
+                    /*promoteChatMember.setCanChangeInformation(true);
                     promoteChatMember.setCanDeleteMessages(true);
                     promoteChatMember.setCanEditMessages(true);
                     promoteChatMember.setCanInviteUsers(true);
@@ -33,8 +33,7 @@ public class promote extends Bot implements Master {
                     promoteChatMember.setCanManageVoiceChats(true);
                     promoteChatMember.setCanPinMessages(true);
                     promoteChatMember.setCanPostMessages(true);
-                    promoteChatMember.setCanRestrictMembers(true);
-                    promoteChatMember.setIsAnonymous(false);
+                    promoteChatMember.setCanRestrictMembers(true);*/
 
                     execute(promoteChatMember);
                     sendMessage(update, user.getFirstName() + " Promoted Successfully");
