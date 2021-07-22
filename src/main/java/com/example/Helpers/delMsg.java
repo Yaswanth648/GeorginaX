@@ -20,7 +20,6 @@ public class delMsg extends Bot {
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-
         } catch (TelegramApiException e) {
             sendMessage(update, "I Don't have enough right's to execute this command");
             e.printStackTrace();
