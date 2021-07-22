@@ -3,6 +3,7 @@ package com.example;
 import com.example.Helpers.configutation;
 import com.example.Plugins.Add;
 import com.example.Plugins.covidData;
+import com.example.Plugins.delete;
 import com.example.Plugins.eval;
 import com.example.Plugins.promote;
 import com.example.Plugins.translate;
@@ -32,6 +33,7 @@ public class Bot extends TelegramLongPollingBot {
         new promote().handleRequests(update, cmd);
         new covidData().handleRequests(update, cmd);
         new translate().handleRequests(update, cmd);
+        new delete().handleRequests(update, cmd);
     }
 
     public String getHandler() {
