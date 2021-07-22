@@ -10,8 +10,8 @@ release.properties
 dependency-reduced-pom.xml
 buildNumber.properties
 .mvn/timing.properties
-src/main/java/com/example/testBot.java
-src/main/java/com/example/TestRunner.java
+src/main/java/com/example/test/testBot.java
+src/main/java/com/example/test/TestRunner.java
 
 
 #
