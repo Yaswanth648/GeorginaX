@@ -16,8 +16,8 @@ public class delete extends Bot implements Master{
             Message m = update.getMessage().getReplyToMessage();
             DeleteMessage deleteMessage = new DeleteMessage(chatId(update), m.getMessageId());
             try {
-                sendMessage(update, "Delete Message Successfully");
-                execute(deleteMessage);
+                if(execute(deleteMessage))
+                    sendMessage(update, "Delete Message Successfully");
             } catch (TelegramApiException e) {
                 e.printStackTrace();
             }
