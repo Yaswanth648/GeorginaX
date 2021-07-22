@@ -11,15 +11,14 @@ import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 public class delMsg extends Bot {
     public void deleteMsg(Update update, int mId) {
         try {
-            if (execute(new DeleteMessage(chatId(update), mId))) {
-                SendMessage sMessage = new SendMessage(chatId(update), "Deleted Message Succesfully");
-                Message message = execute(sMessage);
-                try {
-                    Thread.sleep(1500);
-                    execute(new DeleteMessage(chatId(update), message.getMessageId()));
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
+            execute(new DeleteMessage(chatId(update), mId));
+            SendMessage sMessage = new SendMessage(chatId(update), "Deleted Message Succesfully");
+            Message message = execute(sMessage);
+            try {
+                Thread.sleep(1500);
+                execute(new DeleteMessage(chatId(update), message.getMessageId()));
+            } catch (InterruptedException e) {
+                e.printStackTrace();
             }
 
         } catch (TelegramApiException e) {
